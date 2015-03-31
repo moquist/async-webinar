@@ -10,8 +10,15 @@ lein figwheel
 After your code compiles for the first time, you'll see a Clojurescript REPL
 waiting for a connection from your browser.
 
-Browse to http://localhost:3449 and walk through the examples -- your
-Clojurescript REPL will become live as soon as you connect.
+Browse to http://localhost:3449 and your Clojurescript REPL will become live. In
+your REPL, do this to get into the right namespace:
+
+```clojure
+(in-ns 'webinar.core)
+```
+
+Then open up your browser's debugging console, and walk through the examples in
+your browser.
 
 You can edit ```src/webinar/core.cljs``` in your preferred text editor and your
 changes will be live-loaded by ```lein figwheel```.
