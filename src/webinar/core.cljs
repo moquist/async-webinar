@@ -299,3 +299,36 @@
 
 (ex10 [:aardvark :beetle :cat :dog :elk :ferret
        :goose :hippo :ibis :jellyfish :kangaroo])
+
+(def ex11-colors ["#FF0000"
+                  "#00FF00"
+                  "#0000FF"
+                  "#FFFF00"
+                  "#0000FF"
+                  "#00FF00"])
+
+(defn ex11-make-cell [colors canvas-id x y stopper-chan]
+  (let [ctx (-> (by-id canvas-id)
+                (.getContext "2d"))]
+    (go (while (first (alts! [stopper-chan] :default true))
+          (set! (.-fillStyle ctx) (rand-nth colors))
+          (.fillRect ctx x y 10 10)
+          (<! (async/timeout (* 1 (rand-int 1000))))))))
+
+(defn ex11 [colors canvas-id rows cols]
+  (let [start-stop-button (by-id "ex11-button-start-stop")
+        start-stop (events->chan start-stop-button EventType.CLICK)
+        stopper-chan (chan)]
+    (go
+      (while true
+        (set! (.-innerHTML start-stop-button) "Start!")
+        (<! start-stop)
+        (set! (.-innerHTML start-stop-button) "Stop!")
+        (dotimes [x cols]
+          (dotimes [y rows]
+            (ex11-make-cell colors canvas-id (* 10 x) (* 10 y) stopper-chan)))
+        (<! start-stop)
+        (while (first (alts! [[stopper-chan false] (timeout 5000)])))
+        (println :done-stopping)))))
+
+(ex11 ex11-colors "canvas" 50 50)
