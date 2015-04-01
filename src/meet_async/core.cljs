@@ -1,4 +1,4 @@
-(ns webinar.core
+(ns meet-async.core
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cljs.core.async :as async :refer [>! <! put! chan alts! timeout]]
             [goog.events :as events]

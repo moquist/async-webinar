@@ -1,4 +1,4 @@
-(defproject webinar "0.1.0-SNAPSHOT"
+(defproject meet-async "0.1.0-SNAPSHOT"
   :description "FIXME: write this!"
   :url "http://example.com/FIXME"
 
@@ -17,18 +17,18 @@
   :cljsbuild {
     :builds [{:id "dev"
               :source-paths ["src" "dev_src"]
-              :compiler {:output-to "resources/public/js/compiled/webinar.js"
+              :compiler {:output-to "resources/public/js/compiled/meet_async.js"
                          :output-dir "resources/public/js/compiled/out"
                          :optimizations :none
-                         :main webinar.dev
+                         :main meet-async.dev
                          :asset-path "js/compiled/out"
                          :source-map true
                          :source-map-timestamp true
                          :cache-analysis true }}
              {:id "min"
               :source-paths ["src"]
-              :compiler {:output-to "resources/public/js/compiled/webinar.js"
-                         :main webinar.core
+              :compiler {:output-to "resources/public/js/compiled/meet_async.js"
+                         :main meet-async.core
                          :optimizations :advanced
                          :pretty-print false}}]}
 

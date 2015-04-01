@@ -1,6 +1,6 @@
-(ns webinar.dev
+(ns meet-async.dev
     (:require
-     [webinar.core]
+     [meet-async.core]
      [figwheel.client :as fw]))
 
 (fw/start {
