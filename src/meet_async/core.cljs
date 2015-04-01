@@ -1,4 +1,16 @@
-(ns meet-async.core
+(ns ^{:doc
+      "This was originally forked from
+      https://github.com/cognitect/async-webinar -- many thanks to
+      David Nolen for putting it together.
+
+      This namespace demonstrates the basic features of core.async,
+      and code has been removed (and comments added) for use in a
+      collaborative group learning exercise.
+
+      Feel free to play and explore!
+
+      Scroll down to Example 1 to get started."}
+  meet-async.core
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cljs.core.async :as async :refer [>! <! put! chan alts! timeout]]
             [goog.events :as events]
