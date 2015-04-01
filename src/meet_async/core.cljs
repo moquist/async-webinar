@@ -92,10 +92,10 @@
         clicks-b (events->chan (by-id "ex3-button-b") EventType.CLICK)
         show!    (partial show! "ex3-messages")]
     (go
-      (show! "Waiting for a click from Button A ...")
+      (show! "Waiting for a click from Button A …")
       (<! clicks-a)
       (show! "Got a click!")
-      (show! "Waiting for a click from Button B ...")
+      (show! "Waiting for a click from Button B …")
       (<! clicks-b)
       (show! "Done!"))))
 
