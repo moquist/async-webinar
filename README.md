@@ -16,8 +16,6 @@ Browse to http://localhost:3449 and your Clojurescript REPL will become live. In
 (in-ns 'meet-async.core)
 ```
 
-Then open up your browser's debugging console, and walk through the examples in your browser.
-
-You can edit ```src/meet_async/core.cljs``` in your preferred text editor and your changes will be live-loaded by ```lein figwheel```.
+Edit ```src/meet_async/core.cljs``` in your preferred text editor—your changes will be live-loaded by ```lein figwheel```. You'll want to look at the code as you go through the examples in your browser.
 
 You might also want to take a look at ```resources/public/index.html```. 
