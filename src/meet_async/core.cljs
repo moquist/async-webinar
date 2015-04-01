@@ -71,6 +71,9 @@
 (defn ex2 []
   (let [clicks (events->chan (by-id "ex2-button") EventType.CLICK)
         show!  (partial show! "ex2-messages")]
+    ;; Suggestion: After going through some more examples, come back
+    ;; and add a resetting/continuation feature, so that you can
+    ;; repeat the example in the browser without reloading.
     (go
       (show! "Waiting for a click ...")
       (<! clicks)
