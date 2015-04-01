@@ -328,7 +328,7 @@
           (dotimes [y rows]
             (ex11-make-cell colors canvas-id (* 10 x) (* 10 y) stopper-chan)))
         (<! start-stop)
-        (println :starting-stopping)
+        (println :starting-to-stop)
         (while (first (alts! [[stopper-chan false] (timeout 5000)])))
         (println :stopped-stopping)))))
 
